@@ -61,19 +61,21 @@ import "package:http/http.dart" as http;
 void main(List<String> args) async {
   Uri url=Uri.parse("https://nbu.uz/en/exchange-rates/json/");
   var kursData=await http.get(url);
-
+// print(kursData.body);
   List finished=jsonDecode(kursData.body);
   String dav1=args[0];
   String dav2=args[1];
-  int miq=int.parse(args[2]);
+  double miq=double.parse(args[2]);
+  double fin=0;
 
   finished.forEach((element) {
-    if(element["code"==dav1.toUpperCase()]){
-      if(element["code"==dav2.toUpperCase()]){
-        print("${element["cb_price"* miq]}");
-      }
+    if(element['code']==dav1){
+      miq*=double.parse(element['cb_price']);
     }
-
+    if(element['code']==dav2){
+      fin=miq/double.parse(element["cb_price"]);
+    }
   });
+  print(fin);
 
 }
