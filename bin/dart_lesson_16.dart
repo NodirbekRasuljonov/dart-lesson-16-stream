@@ -30,6 +30,7 @@ void main(List<String> args) async {
 }
 */
 
+// ignore: slash_for_doc_comments
 /** 
 // List ni  LIst.generate yordamida Modellar bilan to'ldirish
 void main(List<String> args) {
@@ -51,3 +52,18 @@ class Car extends Object{
   int? speed;
   Car({required this.model,required this.speed});
 }*/
+
+
+import 'dart:convert';
+
+import "package:http/http.dart" as http;
+
+void main(List<String> args) async {
+  Uri url=Uri.parse("https://nbu.uz/en/exchange-rates/json/");
+  var kursData=await http.get(url);
+
+  List finished=jsonDecode(kursData.body);
+
+  
+
+}
