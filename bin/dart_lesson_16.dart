@@ -30,6 +30,7 @@ void main(List<String> args) async {
 }
 */
 
+/** 
 // List ni  LIst.generate yordamida Modellar bilan to'ldirish
 void main(List<String> args) {
   List<Car> _car=List.generate(10, (i) => Car(model: "Model : $i",speed: i*100));
@@ -49,4 +50,4 @@ class Car extends Object{
   String? model;
   int? speed;
   Car({required this.model,required this.speed});
-}
+}*/
