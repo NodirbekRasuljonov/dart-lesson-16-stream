@@ -63,7 +63,17 @@ void main(List<String> args) async {
   var kursData=await http.get(url);
 
   List finished=jsonDecode(kursData.body);
+  String dav1=args[0];
+  String dav2=args[1];
+  int miq=int.parse(args[2]);
 
-  
+  finished.forEach((element) {
+    if(element["code"==dav1.toUpperCase()]){
+      if(element["code"==dav2.toUpperCase()]){
+        print("${element["cb_price"* miq]}");
+      }
+    }
+
+  });
 
 }
