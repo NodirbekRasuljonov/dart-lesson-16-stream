@@ -74,8 +74,9 @@ void main(List<String> args) async {
     }
     if(element['code']==dav2){
       fin=miq/double.parse(element["cb_price"]);
+      print("${element['code']}+$fin");
     }
   });
-  print(fin);
+  // print(fin);
 
 }
